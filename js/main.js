@@ -14,22 +14,38 @@ $(document).ready(() => {
   let discount = 0;
   const couponInput = $(".coupon");
   $(".btncontinue").click(() => {
-    if (totalvalue > 0) {
-      swal({
-        title: "Purchase!",
-        text: "Purchase Successfully!",
-        icon: "success",
-        button: "Done",
-      });
-      $(".scrollcardview1").empty();
-    } else {
-      swal({
-        title: "Warning!",
-        text: "Purchase Unsuccessfully you need to put items to the cart!",
-        icon: "error",
-        button: "Done",
-      });
-    }
+    swal({
+      title: "Are you sure?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        if (totalvalue > 0) {
+          swal({
+            title: "Purchase!",
+            text: "Purchase Successfully!",
+            icon: "success",
+            button: "Done",
+          });
+          $(".scrollcardview1").empty();
+        } else {
+          swal({
+            title: "Purchase!",
+            text: "Purchase Unsuccessfully!",
+            icon: "error",
+            button: "Back",
+          });
+        }
+      } else {
+        swal({
+          title: "Purchase!",
+          text: "Purchase Unsuccessfully!",
+          icon: "error",
+          button: "Back",
+        });
+      }
+    });
   });
   $("#navbar-button").click(function () {
     $("#navbar-links").toggle();
