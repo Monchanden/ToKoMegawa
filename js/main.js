@@ -56,11 +56,22 @@ $(document).ready(() => {
   });
   couponInput.on("input", () => {
     const couponValue = couponInput.val();
+    if(couponValue.length>0){
     if (couponValue === "admin") {
       discount = 5;
+      $(".unsuc").hide();
+      $(".couponstatsuc").show();
     } else {
       discount = 0;
+      $(".couponstatsuc").hide();
+      $(".unsuc").show();
     }
+    }
+    else{
+       $(".couponstatsuc").hide();
+       $(".unsuc").hide();
+    }
+
     total();
   });
   function total() {

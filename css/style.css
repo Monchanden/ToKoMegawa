@@ -11,7 +11,18 @@
   border: 0px;
   border-radius: 30px;
 }
-
+.couponstatsuc{
+  margin-top: -16.5%;
+  margin-left: 70%;
+  color: #3ac7a5;
+  display: none;
+}
+.unsuc{
+  margin-top: -16.5%;
+  margin-left: 63.8%;
+  color: red;
+  display: none;
+}
 .btn-black {
   margin: 2%;
   background-color: black;
