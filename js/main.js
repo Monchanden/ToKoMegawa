@@ -468,25 +468,21 @@ $(document).ready(() => {
   $(".fa-heart").click(function () {
     $(this).toggleClass("background-heart");
   });
-
-  // Get the search input field
-  let searchInput = $('input[type="search"]');
-
-  // Add an event listener to the search input field
-  searchInput.on("input", function () {
-    // Get the search query
-    let query = $(this).val().toLowerCase();
-
-    // Iterate over the items and hide/show them based on whether their text matches the search query
-    for (let i = 0; i < items.length; i++) {
-      let item = $(".scrollcard").eq(i);
-      let text = items[i].title.toLowerCase();
-      console.log(text);
-      if (text.indexOf(query) === -1) {
-        $(item).hide();
+  function searchItems() {
+    const searchInput = $("#search-input").val().toLowerCase();
+    $(".scrollitem").each(function () {
+      const title = $(this).find(".title-text").text().toLowerCase();
+      if (title.indexOf(searchInput) > -1) {
+        $(this).show();
       } else {
-        $(item).show();
+        $(this).hide();
       }
-    }
+    });
+  }
+
+  $("#search-input").on("keydown", function () {
+    setTimeout(function () {
+      searchItems();
+    }, 0);
   });
 });
