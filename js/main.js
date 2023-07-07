@@ -102,7 +102,7 @@ $(document).ready(() => {
     },
     {
       id: 3,
-      title: "Vivo Pro",
+      title: "Asus vision Pro",
       image: "img/vivo.jpg",
       price: 1500,
       description: "title-text",
