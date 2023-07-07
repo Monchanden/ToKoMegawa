@@ -29,6 +29,9 @@ $(document).ready(() => {
             button: "Done",
           });
           $(".scrollcardview1").empty();
+          for (let i = 0; i < items.length; i++) {
+            items[i].count = 0;
+          }
         } else {
           swal({
             title: "Purchase!",
