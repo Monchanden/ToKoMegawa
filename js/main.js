@@ -3,6 +3,10 @@ $(document).ready(() => {
   const buttonleft = $("#scroll-left");
   const buttonright = $("#scroll-right");
   const scrollcard = $(".scrollcard");
+  const btnlaptop = $("#btnlaptop");
+  const btnheadset = $("#btnheadset");
+  const btnear = $("#btnear");
+  const btnall = $("#btnall");
   let selectedItemId = [];
   let totalvalue;
   let Delivery = 0;
@@ -45,6 +49,7 @@ $(document).ready(() => {
       view: false,
       favorite: false,
       count: 0,
+      producttype: "Laptop",
     },
     {
       id: 2,
@@ -55,6 +60,7 @@ $(document).ready(() => {
       view: false,
       favorite: false,
       count: 0,
+      producttype: "Laptop",
     },
     {
       id: 3,
@@ -65,6 +71,7 @@ $(document).ready(() => {
       view: false,
       favorite: false,
       count: 0,
+      producttype: "Laptop",
     },
     {
       id: 4,
@@ -75,6 +82,7 @@ $(document).ready(() => {
       view: false,
       favorite: false,
       count: 0,
+      producttype: "Laptop",
     },
     {
       id: 5,
@@ -85,6 +93,7 @@ $(document).ready(() => {
       view: false,
       favorite: false,
       count: 0,
+      producttype: "Headphone",
     },
     {
       id: 6,
@@ -95,6 +104,7 @@ $(document).ready(() => {
       view: false,
       favorite: false,
       count: 0,
+      producttype: "Headphone",
     },
     {
       id: 7,
@@ -105,6 +115,7 @@ $(document).ready(() => {
       view: false,
       favorite: false,
       count: 0,
+      producttype: "Headphone",
     },
     {
       id: 8,
@@ -115,6 +126,7 @@ $(document).ready(() => {
       view: false,
       favorite: false,
       count: 0,
+      producttype: "Earphone",
     },
     {
       id: 9,
@@ -125,9 +137,9 @@ $(document).ready(() => {
       view: false,
       favorite: false,
       count: 0,
+      producttype: "Earphone",
     },
   ];
-
   function additem() {
     for (let i = 0; i < items.length; i++) {
       const scrollitem = $("<div>").addClass("scrollitem");
@@ -201,6 +213,98 @@ $(document).ready(() => {
     }
   }
   additem();
+  function additemwithtype(producttype) {
+    for (let i = 0; i < items.length; i++) {
+      if (producttype === items[i].producttype) {
+        const scrollitem = $("<div>").addClass("scrollitem");
+        scrollcard.append(scrollitem);
+
+        const card = $("<div>").addClass("card");
+        scrollitem.append(card);
+
+        const cardimage = $("<img>")
+          .addClass("card-img-top")
+          .attr("src", items[i].image);
+        card.append(cardimage);
+
+        const cardimageoverlay = $("<div>").addClass(
+          "card-img-overlay col-sm-12"
+        );
+        card.append(cardimageoverlay);
+
+        const cardimageoverlaybtn = $("<button>")
+          .addClass("btn btn-black")
+          .text("Free Shipping");
+        cardimageoverlay.append(cardimageoverlaybtn);
+        cardimageoverlaybtn.on("click", function () {
+          const index = $(this).parents(".scrollitem").index();
+          items[i].view = false;
+          console.log(items[i].view);
+          items[i].view = true;
+          console.log(items[i].view);
+          items[i].count = items[i].count + 1;
+          const itemId = items[i].id;
+
+          // Check if item has been selected before
+          const itemIndex = selectedItemId.indexOf(itemId);
+          if (itemIndex !== -1) {
+            selectedItemId.splice(itemIndex, 1); // Delete the item
+          }
+          selectedItemId.push(itemId); // Add the item to the end of the array
+          console.log(selectedItemId);
+          additemview();
+          addtocart();
+          total();
+        });
+
+        const bottomcard = $("<div>").addClass("bottom-card");
+        scrollitem.append(bottomcard);
+
+        const titleprice = $("<div>").addClass("titleprice");
+        bottomcard.append(titleprice);
+
+        const row = $("<div>").addClass("row");
+        titleprice.append(row);
+
+        const colsm61 = $("<div>").addClass("col-sm-8");
+        row.append(colsm61);
+
+        const titletext = $("<h1>").addClass("title-text").text(items[i].title);
+        colsm61.append(titletext);
+
+        const colsm62 = $("<div>").addClass("col-sm-4");
+        row.append(colsm62);
+
+        const price = $("<h1>")
+          .addClass("price")
+          .text(items[i].price + "$");
+        colsm62.append(price);
+
+        const bttext = $("<p>")
+          .addClass("bottom-text")
+          .text(items[i].description);
+        bottomcard.append(bttext);
+      }
+    }
+  }
+
+  btnlaptop.on("click", () => {
+    scrollcard.empty();
+    additemwithtype("Laptop");
+  });
+  btnheadset.on("click", () => {
+    scrollcard.empty();
+    additemwithtype("Headphone");
+  });
+  btnear.on("click", () => {
+    scrollcard.empty();
+    additemwithtype("Earphone");
+  });
+  btnall.on("click", () => {
+    scrollcard.empty();
+    additem();
+  });
+
   function addtocart() {
     $(".scrollcardview1").empty();
     for (let i = 0; i < selectedItemId.length; i++) {
