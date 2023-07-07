@@ -32,6 +32,9 @@ $(document).ready(() => {
           for (let i = 0; i < items.length; i++) {
             items[i].count = 0;
           }
+          totalvalue=0;
+          discount=0;
+          
         } else {
           swal({
             title: "Purchase!",
