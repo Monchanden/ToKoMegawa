@@ -12,13 +12,14 @@ $(document).ready(() => {
   let totalvalue;
   let Delivery = 0;
   let discount = 0;
-  const couponInput = $(".coupon");
+  let couponInput = $(".coupon");
   $(".btncontinue").click(() => {
+
     swal({
       title: "Are you sure?",
       icon: "warning",
       buttons: true,
-      dangerMode: true,
+      dangerMode: false,
     }).then((willDelete) => {
       if (willDelete) {
         if (totalvalue > 0) {
@@ -32,7 +33,7 @@ $(document).ready(() => {
           for (let i = 0; i < items.length; i++) {
             items[i].count = 0;
           }
-          total()
+          total();
         } else {
           swal({
             title: "Purchase!",
@@ -212,9 +213,7 @@ $(document).ready(() => {
       cardimageoverlaybtn.on("click", function () {
         const index = $(this).parents(".scrollitem").index();
         items[i].view = false;
-        console.log(items[i].view);
         items[i].view = true;
-        console.log(items[i].view);
         items[i].count = items[i].count + 1;
         const itemId = items[i].id;
 
@@ -223,7 +222,6 @@ $(document).ready(() => {
           selectedItemId.splice(itemIndex, 1);
         }
         selectedItemId.push(itemId);
-        console.log(selectedItemId);
         additemview();
         addtocart();
         total();
@@ -283,9 +281,7 @@ $(document).ready(() => {
         cardimageoverlaybtn.on("click", function () {
           const index = $(this).parents(".scrollitem").index();
           items[i].view = false;
-          console.log(items[i].view);
           items[i].view = true;
-          console.log(items[i].view);
           items[i].count = items[i].count + 1;
           const itemId = items[i].id;
 
@@ -294,7 +290,6 @@ $(document).ready(() => {
             selectedItemId.splice(itemIndex, 1);
           }
           selectedItemId.push(itemId);
-          console.log(selectedItemId);
           additemview();
           addtocart();
           total();
@@ -406,11 +401,10 @@ $(document).ready(() => {
         col22.append(btnplus);
         btnplus.on("click", () => {
           item.count = item.count + 1;
-          console.log(item.count);
           cartcount.text(item.count);
           total();
         });
-        const hr = $("<hr>");
+        const hr = $("<hr>").css("margin-left","4%");
         row.append(hr);
       }
     }
@@ -491,7 +485,6 @@ $(document).ready(() => {
         colsm611.append(btnadd);
         btnadd.on("click", () => {
           item.count = item.count + 1;
-          console.log(item.count);
           addtocart();
           total();
         });

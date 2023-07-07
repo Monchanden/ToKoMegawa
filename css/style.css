@@ -132,6 +132,7 @@
 .cart-img {
   width: 100px;
   height: 100px;
+  margin-top: -25%;
 }
 .cart-price {
   padding-top: 10%;
@@ -139,7 +140,8 @@
 }
 .carttitleprice {
   margin-left: 15%;
-  margin-top: 14%;
+  margin-top: -4%;
+  margin-bottom:13%;
 }
 
 .navbar-brand img {
@@ -154,7 +156,10 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.cartbody{
 
+ box-shadow: 0px 0px 5px 3px #dadadf; 
+}
 .cart-image {
   width: 40px;
   height: 40px;
