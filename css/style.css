@@ -498,7 +498,7 @@ nav {
 #navbar-links button {
   text-decoration: none;
   margin: 2%;
-  width: 150px;
+  width: 170px;
   background-color: white;
   border-radius: 10px;
   height: 60px;
@@ -524,4 +524,8 @@ nav {
 #navbar-links.show {
   display: flex;
   flex-direction: row;
+}
+#btnall {
+  width: 50px !important;
+  margin-left: 4% !important;
 }
