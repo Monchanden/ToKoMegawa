@@ -7,12 +7,30 @@ $(document).ready(() => {
   const btnheadset = $("#btnheadset");
   const btnear = $("#btnear");
   const btnall = $("#btnall");
+
   let selectedItemId = [];
   let totalvalue;
   let Delivery = 0;
   let discount = 0;
   const couponInput = $(".coupon");
-
+  $(".btncontinue").click(() => {
+    if (totalvalue > 0) {
+      swal({
+        title: "Purchase!",
+        text: "Purchase Successfully!",
+        icon: "success",
+        button: "Done",
+      });
+      $(".scrollcardview1").empty();
+    } else {
+      swal({
+        title: "Warning!",
+        text: "Purchase Unsuccessfully you need to put items to the cart!",
+        icon: "error",
+        button: "Done",
+      });
+    }
+  });
   $("#navbar-button").click(function () {
     $("#navbar-links").toggle();
   });
@@ -26,12 +44,12 @@ $(document).ready(() => {
     total();
   });
   function total() {
-    totalvalue = 0; // initialize totalvalue to 0
+    totalvalue = 0;
     for (let i = 0; i < selectedItemId.length; i++) {
       const itemId = selectedItemId[i];
       const item = items.find((item) => item.id === itemId);
       let value = item.price * item.count;
-      totalvalue += value; // accumulate the value of each item
+      totalvalue += value;
     }
     adddiscount = (totalvalue * discount) / 100;
     $(".subtotal").text(totalvalue + "$");
@@ -153,9 +171,7 @@ $(document).ready(() => {
         .attr("src", items[i].image);
       card.append(cardimage);
 
-      const cardimageoverlay = $("<div>").addClass(
-        "card-img-overlay col-sm-12"
-      );
+      const cardimageoverlay = $("<div>").addClass("");
       card.append(cardimageoverlay);
 
       const cardimageoverlaybtn = $("<button>")
@@ -171,12 +187,11 @@ $(document).ready(() => {
         items[i].count = items[i].count + 1;
         const itemId = items[i].id;
 
-        // Check if item has been selected before
         const itemIndex = selectedItemId.indexOf(itemId);
         if (itemIndex !== -1) {
-          selectedItemId.splice(itemIndex, 1); // Delete the item
+          selectedItemId.splice(itemIndex, 1);
         }
-        selectedItemId.push(itemId); // Add the item to the end of the array
+        selectedItemId.push(itemId);
         console.log(selectedItemId);
         additemview();
         addtocart();
@@ -227,9 +242,7 @@ $(document).ready(() => {
           .attr("src", items[i].image);
         card.append(cardimage);
 
-        const cardimageoverlay = $("<div>").addClass(
-          "card-img-overlay col-sm-12"
-        );
+        const cardimageoverlay = $("<div>").addClass("");
         card.append(cardimageoverlay);
 
         const cardimageoverlaybtn = $("<button>")
@@ -245,12 +258,11 @@ $(document).ready(() => {
           items[i].count = items[i].count + 1;
           const itemId = items[i].id;
 
-          // Check if item has been selected before
           const itemIndex = selectedItemId.indexOf(itemId);
           if (itemIndex !== -1) {
-            selectedItemId.splice(itemIndex, 1); // Delete the item
+            selectedItemId.splice(itemIndex, 1);
           }
-          selectedItemId.push(itemId); // Add the item to the end of the array
+          selectedItemId.push(itemId);
           console.log(selectedItemId);
           additemview();
           addtocart();
@@ -315,7 +327,7 @@ $(document).ready(() => {
         $(".scrollcardview1").append(row);
         const col4 = $("<div>").addClass("col-sm-4");
         row.append(col4);
-        const image = $("<img>").addClass("cart-img").attr("src", item.image); // use item variable instead of items[i]
+        const image = $("<img>").addClass("cart-img").attr("src", item.image);
         col4.append(image);
         const col8 = $("<div>").addClass("col-sm-8");
         row.append(col8);
@@ -389,9 +401,7 @@ $(document).ready(() => {
           .attr("src", item.image);
         card.append(cardimage);
 
-        const cardimageoverlay = $("<div>").addClass(
-          "card-img-overlay col-sm-12"
-        );
+        const cardimageoverlay = $("<div>").addClass("");
         card.append(cardimageoverlay);
 
         const bottomcard = $("<div>").addClass("bottom-card");

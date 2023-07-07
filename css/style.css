@@ -13,16 +13,13 @@
 }
 
 .btn-black {
+  margin: 2%;
   background-color: black;
   color: white;
   border-radius: 10px;
   width: 150px;
 }
-.card-img-top-first img {
-  width: 100%;
-  border-radius: 15px;
-  object-fit: cover;
-}
+
 .bottom-card h1 {
   display: flex;
   flex-direction: row !important;
@@ -59,7 +56,7 @@
   text-align: end;
 }
 .btn-add {
-  margin-left: 60%;
+  margin-left: 50%;
   background-color: #3ac7a5;
   text-align: end;
   border: 0px;
@@ -131,11 +128,7 @@
   margin-left: 15%;
   margin-top: 14%;
 }
-.card-text-white {
-  color: white;
-  text-decoration: bold;
-  font-size: larger;
-}
+
 .navbar-brand img {
   width: 50px;
 }
@@ -148,26 +141,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.card-text-white-frist h2 {
-  color: white;
-}
-.card-text-white-frist p {
-  color: white;
-  font-size: small;
-}
-.text-white {
-  color: white;
-  margin-bottom: -5%;
-  font-size: small;
-}
-.row1 {
-  display: flex;
-  flex-wrap: wrap;
-  position: absolute;
-  flex-direction: row;
-  top: -240%;
-  left: 0;
-}
+
 .cart-image {
   width: 40px;
   height: 40px;
@@ -175,40 +149,11 @@
 .cart-image image {
   width: fit-content;
 }
-.hireus-btn {
-  color: #c166f4;
-  background-color: #f7ebff;
-  border-radius: 15px;
-  width: 100px;
-  border: 0px;
-  padding: 10%;
-}
-.buttonforhire {
-  margin-left: 35%;
-}
+
 .justify-content-center {
   margin-left: 30%;
 }
-.badge {
-  font-size: small;
-  padding: 7px 15px 7px;
-  height: fit-content;
-  width: fit-content;
-  margin: 1% 0% 2% 2%;
-  color: #c166f4;
-  background-color: #f7ebff !important;
-  border-radius: 52px 52px 52px 52px / 68px 68px 68px 68px;
-}
-.last-badge {
-  margin-left: -7%;
-}
-.Card-top {
-  width: 100%;
-}
-.hireus-btn:hover {
-  color: #c166f4;
-  text-decoration: underline;
-}
+
 .scrollaa {
   overflow-x: scroll;
   overflow-y: hidden;
@@ -219,68 +164,24 @@
 .body {
   width: 100%;
 }
-.btn-primary1 {
-  background-color: black;
-  color: white;
-  border: 0px;
-  border-radius: 30px;
-  margin-bottom: 2%;
-}
-.Portfolio-arrow {
-  margin-left: 250%;
-  margin-top: 40%;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
-  border: 0px;
-}
-.Portfolio-arrow .fa-arrow-right {
-  color: black;
-}
-.Portfolio-arrow .fa-arrow-right:hover {
-  color: #c166f4;
-  transform: rotate(-40deg);
-}
+
 .container .row .col-sm-5 .card {
   width: 100%;
   margin-top: 5%;
   border: 0;
   margin-left: -5%;
 }
-.btn-primary1:hover {
-  color: #c166f4;
-  text-decoration: underline;
-}
-.card .img12 {
-  width: 100%;
-  margin-top: 5%;
-  border: 0;
-}
+
 .card-img-top {
   height: 280px;
   width: 250px;
   border-radius: 15px;
 }
-.card-img-top1 {
-  height: 145%;
-  width: 100%;
-}
-.badge button {
-  box-shadow: none;
-  border: none;
-}
-.badge a {
-  text-decoration: none;
-  color: #c166f4;
-}
+
 .scrollitem {
-  margin-left: 2%;
-  width: 320px;
+  width: 300px;
 }
-.scrollitem1 {
-  margin-left: 2%;
-  width: 100%;
-}
+
 .card {
   position: relative;
   margin-bottom: 2%;
@@ -289,6 +190,7 @@
   border-radius: 10%;
 }
 .card img {
+  border: 1px solid gray;
   border-radius: 10%;
 }
 .flex {
@@ -305,10 +207,6 @@
   position: relative;
   right: -80%;
   margin-top: 3%;
-}
-.butoma {
-  position: absolute;
-  bottom: 0;
 }
 .container,
 .container-fluid,
@@ -344,8 +242,6 @@
 }
 .scrollaa::-webkit-scrollbar {
   display: none;
-}
-.card {
 }
 .card .card-img-overlay {
   width: 100%;
@@ -412,9 +308,6 @@
 }
 .btn-1:hover {
   color: #c166f4;
-}
-.flexrow1 {
-  flex-direction: row;
 }
 
 .dashed-line {
@@ -504,7 +397,7 @@ nav {
   height: 60px;
 }
 #navbar-button {
-  width: fit-content;
+  width: 55px;
   height: 35px;
   background-color: white;
   border-radius: 10px;
