@@ -45,7 +45,6 @@
   font-weight: bold;
 }
 .price {
-  padding-left: 40%;
   font-size: large;
   text-align: end;
   font-weight: bold;
@@ -353,21 +352,28 @@
   font-weight: bold;
   text-align: right;
 }
+
 .search input {
   border: 0px;
   background-color: #dddfe0;
   border-radius: 10px;
+  padding-left: 10px;
 }
 .search {
   margin-left: 4%;
   margin-top: 2%;
-  width: 230px;
+  height: 50px;
+  width: 250px;
   background-color: #dddfe0;
   border-radius: 10px;
+}
+#search-input {
+  height: 50px;
 }
 .search input:focus {
   border: 0px;
 }
+
 nav {
   margin: 2%;
   margin-left: 6%;
