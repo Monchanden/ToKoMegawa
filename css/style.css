@@ -49,13 +49,16 @@
   text-align: end;
   font-weight: bold;
 }
+.row .col-sm-3 {
+  margin-top: -6%;
+}
 .fa-heart {
-  padding-left: 77%;
+  padding-left: 50%;
   color: red;
   text-align: end;
 }
 .btn-add {
-  margin-left: 50%;
+  margin-left: 30%;
   background-color: #3ac7a5;
   text-align: end;
   border: 0px;
