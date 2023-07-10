@@ -11,13 +11,13 @@
   border: 0px;
   border-radius: 30px;
 }
-.couponstatsuc {
+.couponstatsuc{
   margin-top: -16.5%;
   margin-left: 70%;
   color: #3ac7a5;
   display: none;
 }
-.unsuc {
+.unsuc{
   margin-top: -16.5%;
   margin-left: 63.8%;
   color: red;
@@ -141,7 +141,7 @@
 .carttitleprice {
   margin-left: 15%;
   margin-top: -4%;
-  margin-bottom: 13%;
+  margin-bottom:13%;
 }
 
 .navbar-brand img {
@@ -156,8 +156,9 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.cartbody {
-  box-shadow: 0px 0px 5px 3px #dadadf;
+.cartbody{
+
+ box-shadow: 0px 0px 5px 3px #dadadf; 
 }
 .cart-image {
   width: 40px;
@@ -347,9 +348,6 @@
   height: 40px;
   color: black;
   margin-bottom: 20px;
-}
-.coupon::placeholder {
-  padding-left: 2%;
 }
 .subtotal {
   font-weight: bold;
