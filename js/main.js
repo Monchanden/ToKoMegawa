@@ -14,7 +14,6 @@ $(document).ready(() => {
   let discount = 0;
   let couponInput = $(".coupon");
   $(".btncontinue").click(() => {
-
     swal({
       title: "Are you sure?",
       icon: "warning",
@@ -34,6 +33,9 @@ $(document).ready(() => {
             items[i].count = 0;
           }
           total();
+          couponInput.val("");
+          $(".couponstatsuc").hide();
+          $(".unsuc").hide();
         } else {
           swal({
             title: "Purchase!",
@@ -57,20 +59,19 @@ $(document).ready(() => {
   });
   couponInput.on("input", () => {
     const couponValue = couponInput.val();
-    if(couponValue.length>0){
-    if (couponValue === "admin") {
-      discount = 5;
-      $(".unsuc").hide();
-      $(".couponstatsuc").show();
+    if (couponValue.length > 0) {
+      if (couponValue === "admin") {
+        discount = 5;
+        $(".unsuc").hide();
+        $(".couponstatsuc").show();
+      } else {
+        discount = 0;
+        $(".couponstatsuc").hide();
+        $(".unsuc").show();
+      }
     } else {
-      discount = 0;
       $(".couponstatsuc").hide();
-      $(".unsuc").show();
-    }
-    }
-    else{
-       $(".couponstatsuc").hide();
-       $(".unsuc").hide();
+      $(".unsuc").hide();
     }
 
     total();
@@ -404,7 +405,7 @@ $(document).ready(() => {
           cartcount.text(item.count);
           total();
         });
-        const hr = $("<hr>").css("margin-left","4%");
+        const hr = $("<hr>").css("margin-left", "4%");
         row.append(hr);
       }
     }
