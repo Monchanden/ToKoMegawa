@@ -11,26 +11,18 @@
   border: 0px;
   border-radius: 30px;
 }
-.couponstatsuc {
-  margin-top: -16.5%;
-  margin-left: 70%;
-  color: #3ac7a5;
-  display: none;
-}
-.unsuc {
-  margin-top: -16.5%;
-  margin-left: 63.8%;
-  color: red;
-  display: none;
-}
+
 .btn-black {
-  margin: 2%;
   background-color: black;
   color: white;
   border-radius: 10px;
   width: 150px;
 }
-
+.card-img-top-first img {
+  width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
 .bottom-card h1 {
   display: flex;
   flex-direction: row !important;
@@ -56,20 +48,18 @@
   font-weight: bold;
 }
 .price {
+  padding-left: 40%;
   font-size: large;
   text-align: end;
   font-weight: bold;
 }
-.row .col-sm-3 {
-  margin-top: -6%;
-}
 .fa-heart {
-  padding-left: 50%;
+  padding-left: 77%;
   color: red;
   text-align: end;
 }
 .btn-add {
-  margin-left: 30%;
+  margin-left: 60%;
   background-color: #3ac7a5;
   text-align: end;
   border: 0px;
@@ -132,7 +122,6 @@
 .cart-img {
   width: 100px;
   height: 100px;
-  margin-top: -25%;
 }
 .cart-price {
   padding-top: 10%;
@@ -140,10 +129,13 @@
 }
 .carttitleprice {
   margin-left: 15%;
-  margin-top: -4%;
-  margin-bottom: 13%;
+  margin-top: 14%;
 }
-
+.card-text-white {
+  color: white;
+  text-decoration: bold;
+  font-size: larger;
+}
 .navbar-brand img {
   width: 50px;
 }
@@ -156,8 +148,25 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.cartbody {
-  box-shadow: 0px 0px 5px 3px #dadadf;
+.card-text-white-frist h2 {
+  color: white;
+}
+.card-text-white-frist p {
+  color: white;
+  font-size: small;
+}
+.text-white {
+  color: white;
+  margin-bottom: -5%;
+  font-size: small;
+}
+.row1 {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  flex-direction: row;
+  top: -240%;
+  left: 0;
 }
 .cart-image {
   width: 40px;
@@ -166,11 +175,40 @@
 .cart-image image {
   width: fit-content;
 }
-
+.hireus-btn {
+  color: #c166f4;
+  background-color: #f7ebff;
+  border-radius: 15px;
+  width: 100px;
+  border: 0px;
+  padding: 10%;
+}
+.buttonforhire {
+  margin-left: 35%;
+}
 .justify-content-center {
   margin-left: 30%;
 }
-
+.badge {
+  font-size: small;
+  padding: 7px 15px 7px;
+  height: fit-content;
+  width: fit-content;
+  margin: 1% 0% 2% 2%;
+  color: #c166f4;
+  background-color: #f7ebff !important;
+  border-radius: 52px 52px 52px 52px / 68px 68px 68px 68px;
+}
+.last-badge {
+  margin-left: -7%;
+}
+.Card-top {
+  width: 100%;
+}
+.hireus-btn:hover {
+  color: #c166f4;
+  text-decoration: underline;
+}
 .scrollaa {
   overflow-x: scroll;
   overflow-y: hidden;
@@ -181,24 +219,68 @@
 .body {
   width: 100%;
 }
-
+.btn-primary1 {
+  background-color: black;
+  color: white;
+  border: 0px;
+  border-radius: 30px;
+  margin-bottom: 2%;
+}
+.Portfolio-arrow {
+  margin-left: 250%;
+  margin-top: 40%;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  border: 0px;
+}
+.Portfolio-arrow .fa-arrow-right {
+  color: black;
+}
+.Portfolio-arrow .fa-arrow-right:hover {
+  color: #c166f4;
+  transform: rotate(-40deg);
+}
 .container .row .col-sm-5 .card {
   width: 100%;
   margin-top: 5%;
   border: 0;
   margin-left: -5%;
 }
-
+.btn-primary1:hover {
+  color: #c166f4;
+  text-decoration: underline;
+}
+.card .img12 {
+  width: 100%;
+  margin-top: 5%;
+  border: 0;
+}
 .card-img-top {
   height: 280px;
   width: 250px;
   border-radius: 15px;
 }
-
-.scrollitem {
-  width: 300px;
+.card-img-top1 {
+  height: 145%;
+  width: 100%;
 }
-
+.badge button {
+  box-shadow: none;
+  border: none;
+}
+.badge a {
+  text-decoration: none;
+  color: #c166f4;
+}
+.scrollitem {
+  margin-left: 2%;
+  width: 320px;
+}
+.scrollitem1 {
+  margin-left: 2%;
+  width: 100%;
+}
 .card {
   position: relative;
   margin-bottom: 2%;
@@ -207,7 +289,6 @@
   border-radius: 10%;
 }
 .card img {
-  border: 1px solid gray;
   border-radius: 10%;
 }
 .flex {
@@ -224,6 +305,10 @@
   position: relative;
   right: -80%;
   margin-top: 3%;
+}
+.butoma {
+  position: absolute;
+  bottom: 0;
 }
 .container,
 .container-fluid,
@@ -259,6 +344,8 @@
 }
 .scrollaa::-webkit-scrollbar {
   display: none;
+}
+.card {
 }
 .card .card-img-overlay {
   width: 100%;
@@ -326,6 +413,9 @@
 .btn-1:hover {
   color: #c166f4;
 }
+.flexrow1 {
+  flex-direction: row;
+}
 
 .dashed-line {
   border-bottom: 2px dashed gray;
@@ -347,9 +437,6 @@
   height: 40px;
   color: black;
   margin-bottom: 20px;
-}
-.coupon::placeholder {
-  padding-left: 2%;
 }
 .subtotal {
   font-weight: bold;
@@ -373,28 +460,21 @@
   font-weight: bold;
   text-align: right;
 }
-
 .search input {
   border: 0px;
   background-color: #dddfe0;
   border-radius: 10px;
-  padding-left: 10px;
 }
 .search {
   margin-left: 4%;
   margin-top: 2%;
-  height: 50px;
-  width: 250px;
+  width: 230px;
   background-color: #dddfe0;
   border-radius: 10px;
-}
-#search-input {
-  height: 50px;
 }
 .search input:focus {
   border: 0px;
 }
-
 nav {
   margin: 2%;
   margin-left: 6%;
@@ -424,7 +504,7 @@ nav {
   height: 60px;
 }
 #navbar-button {
-  width: 55px;
+  width: fit-content;
   height: 35px;
   background-color: white;
   border-radius: 10px;
