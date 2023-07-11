@@ -178,9 +178,7 @@ $(document).ready(() => {
           .attr("src", items[i].image);
         card.append(cardimage);
 
-        const cardimageoverlay = $("<div>").addClass(
-          "card-img-overlay col-sm-12"
-        );
+        const cardimageoverlay = $("<div>").addClass("");
         card.append(cardimageoverlay);
 
         const cardimageoverlaybtn = $("<button>")
@@ -190,19 +188,15 @@ $(document).ready(() => {
         cardimageoverlaybtn.on("click", function () {
           const index = $(this).parents(".scrollitem").index();
           items[i].view = false;
-          console.log(items[i].view);
           items[i].view = true;
-          console.log(items[i].view);
           items[i].count = items[i].count + 1;
           const itemId = items[i].id;
 
-          // Check if item has been selected before
           const itemIndex = selectedItemId.indexOf(itemId);
           if (itemIndex !== -1) {
-            selectedItemId.splice(itemIndex, 1); // Delete the item
+            selectedItemId.splice(itemIndex, 1);
           }
-          selectedItemId.push(itemId); // Add the item to the end of the array
-          console.log(selectedItemId);
+          selectedItemId.push(itemId);
           additemview();
           addtocart();
           total();
