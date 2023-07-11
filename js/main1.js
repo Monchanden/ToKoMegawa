@@ -18,7 +18,8 @@ $(document).ready(() => {
     let Delivery = 0;
     let discount = 0;
     let couponInput = $(".coupon");
-    const putintocart = async () => {
+    const putintocart = async (event) => {
+      event.preventDefault();
       for (let i = 0; i < selectedItemId.length; i++) {
         const itemId = selectedItemId[i];
         const item = items.find((item) => item.id === itemId);
@@ -53,17 +54,18 @@ $(document).ready(() => {
               text: "Purchase Successfully!",
               icon: "success",
               button: "Done",
-            });
-            putintocart();
-            $(".scrollcardview1").empty();
-            for (let i = 0; i < items.length; i++) {
-              items[i].count = 0;
-            }
+            }).then(() => {
+              putintocart();
+              $(".scrollcardview1").empty();
+              for (let i = 0; i < items.length; i++) {
+                items[i].count = 0;
+              }
 
-            total();
-            couponInput.val("");
-            $(".couponstatsuc").hide();
-            $(".unsuc").hide();
+              total();
+              couponInput.val("");
+              $(".couponstatsuc").hide();
+              $(".unsuc").hide();
+            });
           } else {
             swal({
               title: "Purchase!",
