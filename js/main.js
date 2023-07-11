@@ -346,6 +346,9 @@ $(document).ready(() => {
 
   function addtocart() {
     $(".scrollcardview1").empty();
+    if ($(".scrollcardview1").length < 1) {
+      $(".scrollcardview1").height(10);
+    }
     for (let i = 0; i < selectedItemId.length; i++) {
       const itemId = selectedItemId[i];
       const item = items.find((item) => item.id === itemId);
