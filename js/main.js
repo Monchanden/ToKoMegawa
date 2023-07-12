@@ -412,6 +412,11 @@ $(document).ready(() => {
         row.append(hr);
       }
     }
+    if ($(".scrollcardview1").find($(".row")).length > 4) {
+      $(".scrollcardview1").addClass("scroll");
+    } else {
+      $(".scrollcardview1").removeClass("scroll");
+    }
   }
   function additemview() {
     $(".scrollcardview").empty();
