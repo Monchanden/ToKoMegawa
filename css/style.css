@@ -129,6 +129,15 @@
   padding: 30px 0px 0px 0px;
   display: block;
 }
+.scrollcardview1 {
+  margin-top: 3%;
+  height: 280px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+
+  -ms-overflow-style: none; /* IE and Edge */
+}
 .cart-img {
   width: 100px;
   height: 100px;
@@ -448,4 +457,9 @@ nav {
 #btnall {
   width: 50px !important;
   margin-left: 4% !important;
+}
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 2%;
 }
