@@ -86,49 +86,6 @@ $(document).ready(() => {
   });
   async function run() {
     await renderItems();
-    $(".btncontinue").on("click", () => {
-      swal({
-        title: "Are you sure?",
-        icon: "warning",
-        buttons: true,
-        dangerMode: false,
-      }).then((willDelete) => {
-        if (willDelete) {
-          if (totalvalue > 0) {
-            swal({
-              title: "Purchase!",
-              text: "Purchase Successfully!",
-              icon: "success",
-              button: "Done",
-            });
-            putintocart();
-            $(".scrollcardview1").empty();
-            for (let i = 0; i < items.length; i++) {
-              items[i].count = 0;
-            }
-
-            total();
-            couponInput.val("");
-            $(".couponstatsuc").hide();
-            $(".unsuc").hide();
-          } else {
-            swal({
-              title: "Purchase!",
-              text: "Purchase Unsuccessfully!",
-              icon: "error",
-              button: "Back",
-            });
-          }
-        } else {
-          swal({
-            title: "Purchase!",
-            text: "Purchase Unsuccessfully!",
-            icon: "error",
-            button: "Back",
-          });
-        }
-      });
-    });
     $("#navbar-button").on("click", function () {
       $("#navbar-links").toggle();
     });
