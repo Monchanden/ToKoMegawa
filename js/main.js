@@ -15,10 +15,24 @@ $(document).ready(() => {
   let discount = 0;
   let couponInput = $(".coupon");
   const renderItems = async () => {
-    let uri = "http://localhost:3000/items";
-    const res = await fetch(uri);
-    items = await res.json();
+    $.ajax({
+      url: "http://localhost:3000/items",
+      type: "GET",
+      dataType: "json",
+      success: function (res) {
+        items = res;
+        run();
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.log("GET request failed");
+        console.log(jqXHR);
+        console.log(textStatus);
+        console.log(errorThrown);
+      },
+    });
   };
+
+  renderItems();
   const putintocart = async (event) => {
     for (let i = 0; i < selectedItemId.length; i++) {
       const itemId = selectedItemId[i];
@@ -34,10 +48,22 @@ $(document).ready(() => {
       total: totalvalue + Delivery - adddiscount,
       date: currentDate,
     };
-    await fetch("http://localhost:3000/purchase", {
-      method: "POST",
-      body: JSON.stringify(doc),
-      headers: { "Content-Type": "application/json" },
+
+    $.ajax({
+      type: "POST",
+      url: "http://localhost:3000/purchase",
+      data: JSON.stringify(doc),
+      contentType: "application/json",
+      success: function (response) {
+        console.log("POST request successful");
+        console.log(response);
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.log("POST request failed");
+        console.log(jqXHR);
+        console.log(textStatus);
+        console.log(errorThrown);
+      },
     });
   };
   $(".btncontinue").on("click", () => {
@@ -55,16 +81,16 @@ $(document).ready(() => {
             icon: "success",
             button: "Done",
           }).then(() => {
-            putintocart();
+            putintocart(event);
             $(".scrollcardview1").empty();
             for (let i = 0; i < items.length; i++) {
               items[i].count = 0;
             }
-
             total();
             couponInput.val("");
             $(".couponstatsuc").hide();
             $(".unsuc").hide();
+            $(".scrollcardview1").removeClass("scroll");
           });
         } else {
           swal({
@@ -85,7 +111,6 @@ $(document).ready(() => {
     });
   });
   async function run() {
-    await renderItems();
     $("#navbar-button").on("click", function () {
       $("#navbar-links").toggle();
     });
@@ -387,11 +412,11 @@ $(document).ready(() => {
     }
 
     buttonleft.on("click", () => {
-      container.animate({ scrollLeft: "-=300px" }, "fast");
+      container.animate({ scrollLeft: "-=300px" }, 100);
     });
 
     buttonright.on("click", () => {
-      container.animate({ scrollLeft: "+=300px" }, "fast");
+      container.animate({ scrollLeft: "+=300px" }, 100);
     });
     $(".fa-heart").on("click", function () {
       $(this).toggleClass("background-heart");
@@ -618,6 +643,4 @@ $(document).ready(() => {
       }, 0);
     });
   }
-
-  run();
 });

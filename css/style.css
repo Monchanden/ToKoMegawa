@@ -131,7 +131,7 @@
 }
 .scroll {
   margin-top: 3%;
-  height: 280px;
+  height: 260px;
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-behavior: smooth;
