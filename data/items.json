@@ -100,24 +100,5 @@
       "producttype": "Earphone"
     }
   ],
-  "purchase": [
-    {
-      "itemsid": [
-        3
-      ],
-      "total": 1500,
-      "date": "2023-07-12T08:24:48.123Z",
-      "id": 1
-    },
-    {
-      "itemsid": [
-        3,
-        2,
-        1
-      ],
-      "total": 5200,
-      "date": "2023-07-13T06:28:08.342Z",
-      "id": 2
-    }
-  ]
+  "purchase": []
 }
