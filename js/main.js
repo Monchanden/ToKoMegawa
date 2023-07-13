@@ -36,6 +36,7 @@ $(document).ready(() => {
           couponInput.val("");
           $(".couponstatsuc").hide();
           $(".unsuc").hide();
+          $(".scrollcardview1").removeClass("scroll");
         } else {
           swal({
             title: "Purchase!",
