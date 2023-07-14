@@ -211,6 +211,120 @@ $(document).ready(() => {
           .addClass("bottom-text")
           .text(items[i].description);
         bottomcard.append(bttext);
+        if (items[i].producttype == "Laptop") {
+          const hovercard = $("<div>")
+            .addClass("hover-card")
+            .append(
+              $("<div>")
+                .addClass("items-detail")
+                .append($("<p>").text(`Ram: ${items[i].ram}GB`))
+                .append($("<p>").text(`CPU: ${items[i].cpu}`))
+            );
+          scrollitem.append(hovercard);
+
+          // Bind events to the card-img-top element inside the current card
+          cardimage.on("click", () => {
+            hovercard.show(300);
+            cardimage.css("opacity", "0.5");
+          });
+
+          hovercard.on("click", () => {
+            hovercard.hide(300);
+            cardimage.css("opacity", "1");
+          });
+        }
+
+      }
+    }
+    additem();
+    function additemwithtype(producttype) {
+      for (let i = 0; i < items.length; i++) {
+        if (producttype === items[i].producttype) {
+          const scrollitem = $("<div>").addClass("scrollitem");
+          scrollcard.append(scrollitem);
+
+          const card = $("<div>").addClass("card");
+          scrollitem.append(card);
+
+          const cardimage = $("<img>")
+            .addClass("card-img-top")
+            .attr("src", items[i].image);
+          card.append(cardimage);
+
+          const cardimageoverlay = $("<div>").addClass("");
+          card.append(cardimageoverlay);
+
+          const cardimageoverlaybtn = $("<button>")
+            .addClass("btn btn-black")
+            .text("Free Shipping");
+          cardimageoverlay.append(cardimageoverlaybtn);
+          cardimageoverlaybtn.on("click", function () {
+            const index = $(this).parents(".scrollitem").index();
+            items[i].view = false;
+            items[i].view = true;
+            items[i].count = items[i].count + 1;
+            const itemId = items[i].id;
+
+            const itemIndex = selectedItemId.indexOf(itemId);
+            if (itemIndex !== -1) {
+              selectedItemId.splice(itemIndex, 1);
+            }
+            selectedItemId.push(itemId);
+            additemview();
+            addtocart();
+            total();
+          });
+
+          const bottomcard = $("<div>").addClass("bottom-card");
+          scrollitem.append(bottomcard);
+
+          const titleprice = $("<div>").addClass("titleprice");
+          bottomcard.append(titleprice);
+
+          const row = $("<div>").addClass("row");
+          titleprice.append(row);
+
+          const colsm61 = $("<div>").addClass("col-sm-8");
+          row.append(colsm61);
+
+          const titletext = $("<h1>").addClass("title-text").text(items[i].title);
+          colsm61.append(titletext);
+
+          const colsm62 = $("<div>").addClass("col-sm-4");
+          row.append(colsm62);
+
+          const price = $("<h1>")
+            .addClass("price")
+            .text(items[i].price + "$");
+          colsm62.append(price);
+
+          const bttext = $("<p>")
+            .addClass("bottom-text")
+            .text(items[i].description);
+          bottomcard.append(bttext);
+          if (items[i].producttype == "Laptop") {
+            const hovercard = $("<div>")
+              .addClass("hover-card")
+              .append(
+                $("<div>")
+                  .addClass("items-detail")
+                  .append($("<p>").text(`Ram: ${items[i].ram}GB`))
+                  .append($("<p>").text(`CPU: ${items[i].cpu}`))
+              );
+            scrollitem.append(hovercard);
+
+            // Bind events to the card-img-top element inside the current card
+            cardimage.on("click", () => {
+              hovercard.show(300);
+              cardimage.css("opacity", "0.5");
+            });
+
+            hovercard.on("click", () => {
+              hovercard.hide(300);
+              cardimage.css("opacity", "1");
+            });
+          }
+        }
       }
     }
     additem();
@@ -407,6 +521,28 @@ $(document).ready(() => {
             .addClass("bottom-text")
             .text(items[i].description);
           bottomcard.append(bttext);
+          if (items[i].producttype == "Laptop") {
+            const hovercard = $("<div>")
+              .addClass("hover-card")
+              .append(
+                $("<div>")
+                  .addClass("items-detail")
+                  .append($("<p>").text(`Ram: ${items[i].ram}GB`))
+                  .append($("<p>").text(`CPU: ${items[i].cpu}`))
+              );
+            scrollitem.append(hovercard);
+
+            // Bind events to the card-img-top element inside the current card
+            cardimage.on("click", () => {
+              hovercard.show(300);
+              cardimage.css("opacity", "0.5");
+            });
+
+            hovercard.on("click", () => {
+              hovercard.hide(300);
+              cardimage.css("opacity", "1");
+            });
+          }
         }
       }
     }
@@ -611,6 +747,28 @@ $(document).ready(() => {
             addtocart();
             total();
           });
+          if (items[i].producttype == "Laptop") {
+            const hovercard = $("<div>")
+              .addClass("hover-card")
+              .append(
+                $("<div>")
+                  .addClass("items-detail")
+                  .append($("<p>").text(`Ram: ${items[i].ram}GB`))
+                  .append($("<p>").text(`CPU: ${items[i].cpu}`))
+              );
+            scrollitem.append(hovercard);
+
+            // Bind events to the card-img-top element inside the current card
+            cardimage.on("click", () => {
+              hovercard.show(300);
+              cardimage.css("opacity", "0.5");
+            });
+
+            hovercard.on("click", () => {
+              hovercard.hide(300);
+              cardimage.css("opacity", "1");
+            });
+          }
         }
       }
     }

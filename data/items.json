@@ -9,7 +9,9 @@
       "view": false,
       "favorite": false,
       "count": 0,
-      "producttype": "Laptop"
+      "producttype": "Laptop",
+      "ram": 4,
+      "cpu": "Core I5"
     },
     {
       "id": 2,
@@ -20,7 +22,9 @@
       "view": false,
       "favorite": false,
       "count": 0,
-      "producttype": "Laptop"
+      "producttype": "Laptop",
+      "ram": 8,
+      "cpu": "Core M1"
     },
     {
       "id": 3,
@@ -31,7 +35,9 @@
       "view": false,
       "favorite": false,
       "count": 0,
-      "producttype": "Laptop"
+      "producttype": "Laptop",
+      "ram": 16,
+      "cpu": "Core I9"
     },
     {
       "id": 4,
@@ -42,7 +48,9 @@
       "view": false,
       "favorite": false,
       "count": 0,
-      "producttype": "Laptop"
+      "producttype": "Laptop",
+      "ram": 32,
+      "cpu": "Core I12"
     },
     {
       "id": 5,
