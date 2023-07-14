@@ -13,6 +13,7 @@ $(document).ready(() => {
   let Delivery = 0;
   let discount = 0;
   let couponInput = $(".coupon");
+
   $(".btncontinue").click(() => {
     swal({
       title: "Are you sure?",
@@ -102,6 +103,8 @@ $(document).ready(() => {
       favorite: false,
       count: 0,
       producttype: "Laptop",
+      ram: 8,
+      cpu: "Core I5"
     },
     {
       id: 2,
@@ -113,6 +116,8 @@ $(document).ready(() => {
       favorite: false,
       count: 0,
       producttype: "Laptop",
+      ram: 16,
+      cpu: "Core M1"
     },
     {
       id: 3,
@@ -124,6 +129,8 @@ $(document).ready(() => {
       favorite: false,
       count: 0,
       producttype: "Laptop",
+      ram: 8,
+      cpu: "Core I9"
     },
     {
       id: 4,
@@ -135,6 +142,8 @@ $(document).ready(() => {
       favorite: false,
       count: 0,
       producttype: "Laptop",
+      ram: 32,
+      cpu: "Core I2000"
     },
     {
       id: 5,
@@ -256,6 +265,29 @@ $(document).ready(() => {
         .addClass("bottom-text")
         .text(items[i].description);
       bottomcard.append(bttext);
+      if (items[i].producttype == "Laptop") {
+        const hovercard = $("<div>")
+          .addClass("hover-card")
+          .append(
+            $("<div>")
+              .addClass("items-detail")
+              .append($("<p>").text(`Ram: ${items[i].ram}GB`))
+              .append($("<p>").text(`CPU: ${items[i].cpu}`))
+          );
+        scrollitem.append(hovercard);
+
+        // Bind events to the card-img-top element inside the current card
+        cardimage.on("click", () => {
+          hovercard.show(300);
+          cardimage.css("opacity", "0.5");
+        });
+
+        hovercard.on("click", () => {
+          hovercard.hide(300);
+          cardimage.css("opacity", "1");
+        });
+      }
+
     }
   }
   additem();
@@ -324,6 +356,28 @@ $(document).ready(() => {
           .addClass("bottom-text")
           .text(items[i].description);
         bottomcard.append(bttext);
+        if (items[i].producttype == "Laptop") {
+          const hovercard = $("<div>")
+            .addClass("hover-card")
+            .append(
+              $("<div>")
+                .addClass("items-detail")
+                .append($("<p>").text(`Ram: ${items[i].ram}GB`))
+                .append($("<p>").text(`CPU: ${items[i].cpu}`))
+            );
+          scrollitem.append(hovercard);
+
+          // Bind events to the card-img-top element inside the current card
+          cardimage.on("click", () => {
+            hovercard.show(300);
+            cardimage.css("opacity", "0.5");
+          });
+
+          hovercard.on("click", () => {
+            hovercard.hide(300);
+            cardimage.css("opacity", "1");
+          });
+        }
       }
     }
   }
@@ -498,7 +552,30 @@ $(document).ready(() => {
           addtocart();
           total();
         });
+        if (items[i].producttype == "Laptop") {
+          const hovercard = $("<div>")
+            .addClass("hover-card")
+            .append(
+              $("<div>")
+                .addClass("items-detail")
+                .append($("<p>").text(`Ram: ${items[i].ram}GB`))
+                .append($("<p>").text(`CPU: ${items[i].cpu}`))
+            );
+          scrollitem.append(hovercard);
+
+          // Bind events to the card-img-top element inside the current card
+          cardimage.on("click", () => {
+            hovercard.show(300);
+            cardimage.css("opacity", "0.5");
+          });
+
+          hovercard.on("click", () => {
+            hovercard.hide(300);
+            cardimage.css("opacity", "1");
+          });
+        }
       }
+
     }
   }
 
