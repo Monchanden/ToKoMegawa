@@ -81,12 +81,16 @@ $(document).ready(() => {
             icon: "success",
             button: "Done",
           }).then(() => {
+
             putintocart(event);
             $(".scrollcardview1").empty();
             for (let i = 0; i < items.length; i++) {
               items[i].count = 0;
             }
-            total();
+            $(".subtotal").text("");
+            $(".Delivery").text("");
+            $(".Discount").text("");
+            $(".totalaa").text("");
             couponInput.val("");
             $(".couponstatsuc").hide();
             $(".unsuc").hide();
