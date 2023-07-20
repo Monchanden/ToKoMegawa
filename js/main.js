@@ -66,7 +66,18 @@ $(document).ready(() => {
         discount = 5;
         $(".unsuc").hide();
         $(".couponstatsuc").show();
-      } else {
+      }
+      else if (couponValue === "chanden") {
+        discount = 100;
+        $(".unsuc").hide();
+        $(".couponstatsuc").show();
+      }
+      else if (couponValue === "sarah") {
+        discount = 50;
+        $(".unsuc").hide();
+        $(".couponstatsuc").show();
+      }
+      else {
         discount = 0;
         $(".couponstatsuc").hide();
         $(".unsuc").show();
